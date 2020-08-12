@@ -1,0 +1,19 @@
+<div class="container mt-3 p-3 bg-light">
+
+<h1 class="mb-4"> Add new restaurant </h1>
+
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+
+  <%= f.submit %>
+<% end %>
+
+<p class="mt-5"> <%= link_to 'Back to the list', restaurants_path, class: "btn btn-success" %> </p>
+</div>

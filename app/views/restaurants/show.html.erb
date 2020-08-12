@@ -1,0 +1,22 @@
+
+
+<div class ="container mt-3 p-3 bg-light ">
+<h1> Restaurant: <strong> <%= @restaurant.name %> </strong> </h1>
+
+<h5> Address: <%= @restaurant.address %></h5>
+<p> Category: <%= @restaurant.category.capitalize %></p>
+
+<p> <%= link_to 'Edit', edit_restaurant_path, class: "btn btn-danger" %> |
+  <%= link_to 'Back to the list', restaurants_path, class: "btn btn-warning" %> |
+  <%= link_to 'Write a review', new_restaurant_review_path(@restaurant), class: "btn btn-info" %></p>
+</div>
+
+<div class="container mt-3 p-3 bg-info">
+ <h3> Reviews </h3>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+    <li> Rating: <%= review.rating %> | <%= review.content %> </li>
+    <% end %>
+  </ul>
+</div>
+
